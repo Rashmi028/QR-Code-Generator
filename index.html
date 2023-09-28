@@ -10,16 +10,17 @@
       <h1>QR CODE GENERATOR</h1>
       <br>
       <!-- Enter URL:  -->
-      <form action="/submit" method="POST">
+      <form action="/submit" method="post">
         <!-- <form> -->
-        <label for="URL">Enter URL:</label>
-        <input type="text" id="URL" name="URL"><br><br>
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url"><br><br>
         <input type="submit" value="Generate QR">
       </form>
 
       <h2>Generated QR :</h2>
       <br>
-      <img src="i_love_qr.png">
+      <div id="qrcode"></div>
+      <!-- <img src="i_love_qr.png"> -->
 
       
 </body>
