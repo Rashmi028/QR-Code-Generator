@@ -1,8 +1,12 @@
 body{
-    background-color: rgb(221, 201, 211);
- text-align: center;
+    background-image: url("bgimage2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
        
 }
 h1{
-    text-align: center;
+    margin-top: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
