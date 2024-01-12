@@ -1,27 +1,51 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-      <h1>QR CODE GENERATOR</h1>
-      <br>
-      <!-- Enter URL:  -->
-      <form action="/submit" method="post">
-        <!-- <form> -->
+    <h1>QR CODE GENERATOR</h1>
+    <br>
+    <!-- Enter URL:  -->
+    <form action="/submit" method="post" id="qrForm">
         <label for="url">Enter URL:</label>
         <input type="text" id="url" name="url"><br><br>
         <input type="submit" value="Generate QR">
-      </form>
+    </form>
 
-      <h2>Generated QR :</h2>
-      <br>
-      <div id="qrcode"></div>
-      <img src="i_love_qr.png">
+    <h2>Generated QR :</h2>
+    <br>
+    <div id="qrcode"></div>
 
-      <script src="index2.js"></script>
+    <script src="index2.js"></script>
+    <script>
+        const form = document.getElementById('qrForm');
+        const qrcodeDiv = document.getElementById('qrcode');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            // Get the URL input value
+            const url = document.getElementById('url').value;
+
+            // Make an asynchronous request to the server
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `url=${encodeURIComponent(url)}`,
+            });
+
+            // Parse the response as text (filename of the generated QR code)
+            const filename = await response.text();
+
+            // Display the QR code in the div
+            qrcodeDiv.innerHTML = `<img src="${filename}" alt="QR Code">`;
+        });
+    </script>
 </body>
 </html>
