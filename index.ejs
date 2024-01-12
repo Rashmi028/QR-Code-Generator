@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QR CODE GENERATOR</h1>
+    <br>
+    <!-- Enter URL:  -->
+    <form id="qrForm">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url"><br><br>
+        <input type="submit" value="Generate QR">
+    </form>
+
+    <h2>Generated QR:</h2>
+    <br>
+    <div id="qrcode"><img src="<%= dataUrl %>" alt="QR Code"></div>
+
+    <script src="index2.js"></script>
+    <script>
+        // Add your client-side JavaScript code here if needed
+    </script>
+</body>
+</html>

@@ -1,20 +1,17 @@
-// import express from "express";
+import express from "express";
 // import bodyParser from "body-parser";
 // import { dirname } from "path";
-// import { fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 import fs from "fs";
 import inquirer from 'inquirer';
-// import { url } from "inspector";
+import { url } from "inspector";
 import qr from "qr-image"
 // const __dirname = dirname(fileURLToPath(import.meta.url));
-// const app = express();
+const app = express();
 // const port = 3000;
 // app.use(bodyParser.urlencoded({extended:true}));
 // app.get("/", (req, res) => {
 //     res.sendFile(__dirname + "/index.html");
-//   });
-// app.get("/submit",(req, res) => {
-//     res.send("HELLO");
 //   });
 // app.post("/submit", (req, res) => {
 //     console.log(req.body);
@@ -42,6 +39,6 @@ inquirer
      console.log("something else went wrong");
     }
   });
-//   app.listen(port, () => {
-//     console.log(` `);
-//   });
+  // app.listen(port, () => {
+  //   console.log(` `);
+  // });
